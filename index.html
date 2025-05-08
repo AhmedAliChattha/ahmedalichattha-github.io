@@ -1,65 +1,81 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ahmed Ali - Portfolio</title>
-  <link rel="stylesheet" href="style.css" type="text/css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-MNlZGqTfb5Db0VXx1iH2ZxNdQQGk5bh9a3gPTWcQrWyMWydb0X7qlDlCZ8VZz0cHRZhFzA8fJoHFaQ3xOd5PHQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
   <div class="container">
-    <div class="sidebar">
-      <img src="docs/assets/WhatsApp Image 2025-05-07 at 11.16.15 PM.jpeg" alt="Ahmed Ali">
+    <aside class="sidebar">
+      <img src="assets/your-photo.jpg" alt="Ahmed Ali" class="profile-pic" />
       <h2>Ahmed Ali</h2>
-      <span class="badge">Data Scientist</span>
+      <p class="tag">Data Scientist</p>
 
-      <div class="contact-info">
-        <div class="info-block">
-          <i class="fas fa-envelope"></i>
-          <div>
-            <div class="label">Email</div>
-            <div class="detail">ahmedalichattha71@gmail.com</div>
-          </div>
-        </div>
-        <div class="info-block">
-          <i class="fas fa-phone"></i>
-          <div>
-            <div class="label">Phone</div>
-            <div class="detail">+1 (512) 677-5656</div>
-          </div>
-        </div>
-        <div class="info-block">
-          <i class="fas fa-calendar-alt"></i>
-          <div>
-            <div class="label">Birthday</div>
-            <div class="detail">July 6</div>
-          </div>
-        </div>
-        <div class="info-block">
-          <i class="fas fa-map-marker-alt"></i>
-          <div>
-            <div class="label">Location</div>
-            <div class="detail">Round Rock, Texas, USA</div>
-          </div>
-        </div>
+      <div class="info">
+        <div><i class="fas fa-envelope"></i><span>ahmedalichattha71@gmail.com</span></div>
+        <div><i class="fas fa-phone"></i><span>+1 (512) 677-5656</span></div>
+        <div><i class="fas fa-calendar"></i><span>July 6</span></div>
+        <div><i class="fas fa-location-dot"></i><span>Round Rock, Texas, USA</span></div>
       </div>
-    </div>
+    </aside>
 
-    <div class="main-content">
-      <nav class="navbar">
-        <a href="index.html" class="active">About</a>
-        <a href="resume.html">Resume</a>
-        <a href="projects.html">Projects</a>
-        <a href="research.html">Research</a>
-        <a href="contact.html">Contact</a>
+    <main class="main-content">
+      <nav>
+        <ul>
+          <li><a href="#" onclick="showSection('about')">About</a></li>
+          <li><a href="#" onclick="showSection('resume')">Resume</a></li>
+          <li><a href="#" onclick="showSection('projects')">Projects</a></li>
+          <li><a href="#" onclick="showSection('research')">Research</a></li>
+          <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+        </ul>
       </nav>
-      <h1>About Me</h1>
-      <p>Hello, I'm Aasish Tammana, a data analytics specialist with a Master's in Computer Science...
-      (Add your full About Me here)</p>
-    </div>
+
+      <section id="about" class="section active">
+        <h1>About Me</h1>
+        <p>Hello, I'm Ahmed Ali, a data analytics specialist with a Master's in Computer Science... (Add your full About Me here)</p>
+      </section>
+
+      <section id="resume" class="section">
+        <h1>Resume</h1>
+        <p>Download my resume <a href="assets/resume.pdf" target="_blank">here</a>. Or view the key highlights below.</p>
+        <ul>
+          <li>Data Scientist at XYZ Corp (2021–Present)</li>
+          <li>Research Assistant at ABC Lab (2019–2021)</li>
+          <li>Masters in Computer Science — XYZ University</li>
+        </ul>
+      </section>
+
+      <section id="projects" class="section">
+        <h1>Projects</h1>
+        <p>Here are some of my featured projects:</p>
+        <ul>
+          <li>AI Chatbot for Healthcare</li>
+          <li>Stock Market Predictor using LSTM</li>
+        </ul>
+      </section>
+
+      <section id="research" class="section">
+        <h1>Research</h1>
+        <p>Published papers and research on AI for public health and robotics automation.</p>
+      </section>
+
+      <section id="contact" class="section">
+        <h1>Contact</h1>
+        <p>Feel free to reach out via email: <strong>ahmedalichattha71@gmail.com</strong></p>
+      </section>
+    </main>
   </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 </body>
 </html>
